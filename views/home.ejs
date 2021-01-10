@@ -10,9 +10,10 @@
     <script src="https://kit.fontawesome.com/5c174d451e.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDINJSerrPis0Z8fayKEyicyfmdxVcopiE"></script>
 
-
-    <title style="color: purple;">bookmy </title>
+    <title style="color: purple;">codify </title>
 </head>
 <style>
     * {
@@ -79,12 +80,7 @@
     }
 
     .card img {
-        border-radius: 50%;
-        width: 15vw;
-
-        margin: auto;
-        height: 15vw;
-
+        height: 300px;
     }
 
     .why-section {
@@ -106,6 +102,12 @@
     .myfooter {
         background-color: black;
     }
+
+    .showcase5 {
+        background-color: rgb(217, 217, 217);
+        height: 170vh;
+
+    }
 </style>
 
 <body>
@@ -113,117 +115,127 @@
 
         <div class="container-fluid  showcase">
             <div class="row text-center py-5 text-white">
-                <h1>Hey were you want to go</h1>
-                <h1>BOOK <span><i class="fas fa-taxi"></i> </span> NOW</h1>
+                <h1>Get early access, now</h1>
+                <h1>Be first for our free learning course, and <strong> get courses from ₹360 </strong></h1>
             </div>
-            <div class="container showcase2 d-flex">
-
-
-                <select class="form-select form-select-lg w-25 m-2" aria-label=".form-select-lg example">
-                    <option selected>Vehicle Type</option>
-                    <option value="1">Cab</option>
-                    <option value="2">Taxi</option>
-                    <option value="3">auto</option>
-                    <option value="4">tempo</option>
-                </select>
-
-
-                <input class="form-control-sm w-25 m-2" list="datalistOptions" id="exampleDataList" placeholder="FROM">
-                <datalist id="datalistOptions">
-                    <option value="mumbai">
-                    <option value="pune">
-                    <option value="panjab">
-                    <option value="nashik">
-                    <option value="hydrabad">
-                </datalist>
-
-                <input class="form-control-sm w-25 m-2 " list="datalistOptions" id="exampleDataList" placeholder="TO">
-                <datalist id="datalistOptions">
-                    <option value="hydrabad">
-                    <option value="pune">
-                    <option value="mumbai">
-                    <option value="aurangabad">
-                    <option value="nashik">
-                </datalist>
-
-
-
-
-                <div class=" d-md-inline m-2">
-                    <button class="btn btn-primary btn-primary p-2" type="button">
-                        BOOK A RIDE NOW
-                    </button>
-                </div>
+            <div class="container text-center text-white">
+                <h3>Move up in your career with specialisations from top universities.</h3>
 
             </div>
+
+        </div>
         </div>
         <div class="container text-center  py-5">
-            <h1>A car for every occasion</h1>
-            <p>bookmyvehicle offers city taxis, inter-city cabs, and local cabs at hourly packages</p>
+            <h1>The world's largest selection of courses</h1>
+            <p>Choose from 130,000 online video courses with new additions published every month</p>
         </div>
 
+        <div class="container-fuid showcase5">
 
 
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py2.jfif" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">2021 Complete Python Bootcamp From Zero to Hero in Python</h5>
+                                <p class="card-text">Learn Python like a Professional Start from the basics and go all
+                                    the way to creating your own applications and games</p>
+                                <p class="d-none">1111</p>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="400">Add to
+                                    cart</a>
+                            </div>
+                        </div>
 
-        <div class="container-fluid parent-div">
-            <div class="container d-md-flex ">
-
-
-                <div class="card  m-4" style="width: 30%;">
-                    <img src="/images/taxi3.jpg" class="card-img-top mt-3 " alt="taxi-image">
-                    <div class="card-body">
-                        <h5 class="card-title">city taxi</h5>
-                        <p class="card-text"> The perfect way to get through your everyday travel needs. City taxis are
-                            available 24/7 and you can book and travel in an instant. With rides starting from as low as
-                            Rs. 6/km, you can choose from a wide range of options! You can also opt to do your bit for
-                            the environment with Ola Share!
-                        </p>
-                        <a href="#" class="btn btn-primary">BOOK NOW</a>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py3.jfif" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">Machine Learning A-Z Hands-On Python and R In Data Science</h5>
+                                <p class="card-text">Learn to create Machine Learning Algorithms in Python and R from
+                                    two Data Science experts. Code templates included.
+                                    Bestseller</p>
+                                <p class="d-none">2222</p>
 
-
-                <div class="card  m-4" style="width: 30%;">
-                    <img src="/images/taxi2.jpg" class="card-img-top mt-3" alt="taxi-image">
-                    <div class="card-body">
-                        <h5 class="card-title">outstation</h5>
-                        <p class="card-text">
-                            Ride out of town at affordable one-way and round-trip fares with Ola’s intercity travel
-                            service. Choose from a range of AC cabs driven by top partners, available in 1 hour or book
-                            upto 7 days in advance. We have you covered across India with presence in 90+ cities with
-                            over 500 one way routes.
-                        </p>
-                        <a href="#" class="btn btn-primary">BOOK NOW</a>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="450">Add to
+                                    cart</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-
-                <div class="card m-4 " style="width: 30%;">
-                    <img src="/images/taxi1.jpg" class="card-img-top mt-3" alt="taxi-image">
-                    <div class="card-body">
-                        <h5 class="card-title">Rentals</h5>
-                        <p class="card-text">
-                            With Ola Rentals you get a cab at your disposal. So be it a day long business meeting, a
-                            shopping trip with your friends or just a day out in a new city, we have you covered.
-                            Packages start at 1 hour and can be extended upto 12 hours!
-                        </p>
-                        <a href="#" class="btn btn-primary">BOOK A RIDE</a>
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py4.jfif" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">Python for Data Science and Machine Learning Bootcamp</h5>
+                                <p class="card-text">Learn how to use NumPy, Pandas, Seaborn , Matplotlib , Plotly ,
+                                    Scikit-Learn , Machine Learning, Tensorflow , and more!</p>
+                                <p class="d-none">3333</p>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="450">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py3.jfif" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">The Python Mega Course: Build 10 Real World Applications</h5>
+                                <p class="card-text">A complete practical Python course for both beginners &
+                                    intermediates! Master Python 3 by making 10 amazing Python apps.</p>
+                                <p class="d-none">4444</p>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="500">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
 
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py4.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Master the Coding Interview: Data Structures and Algorithms</h5>
+                                <p class="card-text">Ultimate coding interview bootcamp. Get more job offers, negotiate
+                                    a raise: Everything you need to get the job you want!
+                                </p>
+                                <p class="d-none">5555</p>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="600">Add to
+                                    cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-3">
+                            <img src="/images/py4.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">The Complete 2020 Web Development Bootcamp</h5>
+                                <p class="card-text">Become a full-stack web developer with just one course. HTML, CSS,
+                                    Javascript, Node, React, MongoDB and more!</p>
+                                <p class="d-none">6666</p>
+                                <a href="#" onclick="addtocart(this)" class="btn btn-primary" data-price="600">Add to
+                                    cart</a>
+                            </div>
+                        </div>
+                    </div>
 
-
-
-
-
-
+                </div>
             </div>
-
-
         </div>
+
+
+
+
+
+
         <div class="container text-center  py-5 ">
-            <h3>Why ride with book my taxi</h3>
-            <p>The best way to travel to your destination
+            <h4>The world's largest selection of courses</h4>
+            <p>JavaScript relates to DevelopmentIT & SoftwareWeb DevelopmentProgramming Languages
+
+            </p>
             </p>
         </div>
 
@@ -237,11 +249,11 @@
                         <div class="m-3">
 
 
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
+                            <img src="/images/py2.jfif" class="img-rounded" alt="myimage">
                         </div>
 
                         <div class="m-3">
-                            <h4>cabs for every posket</h4>
+                            <h4>Javascript Tutorial and Projects Course</h4>
                             <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
                                 pocket
 
@@ -252,48 +264,11 @@
                         <div class="m-3">
 
 
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
+                            <img src="/images/py3.jfif" class="img-rounded" alt="myimage">
                         </div>
 
                         <div class="m-3">
-                            <h4>cabs for every posket</h4>
-                            <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
-                                pocket
-
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-                <div class="row  ">
-                    <div class="col-md-5 d-flex whysection m-3">
-                        <div class="m-3">
-
-
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
-                        </div>
-
-                        <div class="m-3">
-                            <h4>cabs for every posket</h4>
-                            <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
-                                pocket
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-5 d-flex whysection m-3">
-                        <div class="m-3">
-
-
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
-                        </div>
-
-                        <div class="m-3">
-                            <h4>cabs for every posket</h4>
+                            <h4>Javascript Tutorial and Projects Course</h4>
                             <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
                                 pocket
 
@@ -311,11 +286,11 @@
                         <div class="m-3">
 
 
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
+                            <img src="/images/py4.jfif" class="img-rounded" alt="myimage">
                         </div>
 
                         <div class="m-3">
-                            <h4>cabs for every posket</h4>
+                            <h4>The Complete Digital Marketing Course - 12 Courses in 1</h4>
                             <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
                                 pocket
 
@@ -326,11 +301,48 @@
                         <div class="m-3">
 
 
-                            <img src="/images/taxi1.jpg" class="img-rounded" alt="myimage">
+                            <img src="/images/py2.jfif" class="img-rounded" alt="myimage">
                         </div>
 
                         <div class="m-3">
-                            <h4>cabs for every posket</h4>
+                            <h4>The Complete Digital Marketing Course - 12 Courses in 1</h4>
+                            <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
+                                pocket
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="row  ">
+                    <div class="col-md-5 d-flex whysection m-3">
+                        <div class="m-3">
+
+
+                            <img src="/images/py3.jfif" class="img-rounded" alt="myimage">
+                        </div>
+
+                        <div class="m-3">
+                            <h4>The Complete Digital Marketing Course - 12 Courses in 1</h4>
+                            <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
+                                pocket
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-flex whysection m-3">
+                        <div class="m-3">
+
+
+                            <img src="/images/py4.jfif" class="img-rounded" alt="myimage">
+                        </div>
+
+                        <div class="m-3">
+                            <h4>The Complete Digital Marketing Course - 12 Courses in 1</h4>
                             <p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every
                                 pocket
 
@@ -370,7 +382,7 @@
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">BOOkmytaxi</h5>
+                        <h5 class="text-uppercase">CODIFY</h5>
 
                         <p>
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
@@ -382,11 +394,11 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Discover book mytaxi</h5>
+                        <h5 class="text-uppercase">Discover CODIFY</h5>
 
                         <ul class="list-unstyled mb-0 text-white">
                             <li>
-                                <a href="#!" class="text-white text-decoration-none">About the bookmytaxi</a>
+                                <a href="#!" class="text-white text-decoration-none">About the codify</a>
                             </li>
                             <li>
                                 <a href="#!" class="text-white text-decoration-none">offers</a>
@@ -436,10 +448,10 @@
         <!-- Footer -->
 
 
-
+        <!-- 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
 
@@ -449,12 +461,44 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
             integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
             crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script>
 
 
+            function addtocart(card_btn) {
+                let user = document.querySelector("#myuser").innerHTML;
 
+
+                let realuser = user.trim();
+                console.log("=====" + realuser + "====");
+                if (realuser == "welcome") {
+                    window.location.href = "http://localhost:5000/codify/auth/login";
+                    alert("please login first")
+
+
+                }
+                else {
+                    card_btn.innerHTML = "course is added in cart";
+
+
+
+
+
+                    let id = card_btn.parentElement.children[2].innerText;
+                    let price = card_btn.dataset.price
+
+
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log("running");
+                        }
+                    };
+                    xhttp.open("GET", "/codify/addtocart?id=" + id + "&price=" + price);
+                    xhttp.send();
+                }
+            }
         </script>
-
 </body>
 
 </html>

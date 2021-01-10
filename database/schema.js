@@ -23,17 +23,39 @@ const schema = new mongoose.Schema({
         required: true
 
     },
-    traveling_history: [
+    cart: [
         {
-            from: String,
-            to: String,
-            KMS: String,
-            vehicle: String,
-            paid_amount: String
-
+            coursename: String,
+            coursedetails: String,
+            rating: Number,
+            price: Number,
+            img: String,
+            video: String
         }
     ]
     ,
+    total: {
+        required: false,
+        type: Number
+
+    },
+    mycourses: [{
+        coursename: String,
+        coursedetails: String,
+        rating: Number,
+        price: Number,
+        img: String,
+        video: String
+
+    }],
+    tra_id: [{
+        ids: String,
+        required: false
+    }],
+    picture: {
+        type: String,
+        require: false
+    },
     Date: {
         type: Date,
         default: Date.now
@@ -42,4 +64,6 @@ const schema = new mongoose.Schema({
 
 })
 const db = mongoose.model("customer_data", schema);
+
+
 module.exports = db;

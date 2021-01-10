@@ -3,16 +3,116 @@ const router = express.Router();
 const db = require('../database/schema');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-
 const passport = require('passport');
+const pass_auth = require('../config/passport')
+
+
+
+
+
+var register = false
+var login = false
+
+
 
 router.get("/login", (req, res) => {
     res.render("login");
 })
 
-router.get("/google", passport.authenticate("google", {
+const registermid = (req, res, next) => {
+    register = true;
+    login = false
+    next();
+}
+const loginmid = (req, res, next) => {
+    login = true
+    register = false
+    next();
+}
+
+
+
+router.get("/google", registermid, passport.authenticate("google", {
     scope: ["profile"]
 }));
+
+router.get("/googlelogin", loginmid, passport.authenticate("google", {
+    scope: ["profile"]
+}));
+
+
+
+
+
+
+router.get('/logout', (req, res) => {
+
+
+
+    if (req.session.myuser) {
+
+        req.session = null;
+        res.redirect("/codify/home")
+
+    }
+    else {
+        const login_err = [];
+        login_err.push({ err_msg: "please login first" })
+        res.render("login", { login_err });
+    }
+
+
+})
+
+
+router.get("/google/redirect", passport.authenticate('google'), (req, res) => {
+
+    if (login == true && register == false) {
+        db.findOne({ username: req.user.username }).then((user) => {
+            if (user) {
+                req.session.myuser = user.username;
+                res.redirect('/codify/home');
+            }
+            else {
+                res.redirect('/codify/auth/register')
+            }
+
+
+        })
+            .catch(err => {
+                console.log(err);
+            })
+
+
+
+
+    }
+    else {
+
+        db.findOne({ username: req.user.username }).then((user) => {
+            if (user) {
+                const login_err = [];
+                login_err.push({ err_msg: "you already hav a account plaese login" })
+                res.render("login", { login_err })
+            }
+            else {
+                req.session.myuser = user.username;
+
+                reverse.redirect("/codify/home")
+            }
+        })
+            .catch(err => {
+                console.log(err);
+            })
+
+    }
+
+
+
+})
+
+
+
 
 
 
@@ -22,6 +122,7 @@ router.post('/login', (req, res) => {
         bcrypt.compare(req.body.password, user.password, (err, ok) => {
 
             if (ok == true) {
+
                 res.render('home');
             }
             else if (ok == false) {
@@ -88,6 +189,7 @@ router.post("/register", (req, res) => {
                             .then(() => {
 
                                 // errors.push({ msg: "registeration succefully " })
+
                                 res.render('home');
                             })
                             .catch((err) => {
