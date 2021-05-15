@@ -63,17 +63,16 @@ router.post("/home/payment", (req, res) => {
             source: req.body.stripeToken,
             name: req.session.myuser,
 
-        })
-            .then((customer) => {
+        }).then((customer) => {
+            console.log("thise is payment user ",customer);
 
-                return stripre.charges.create({
-                    amount: user.total,    // Charing Rs 25 
-                    description: 'Web Development Product',
-                    currency: 'INR',
-                    customer: customer.id
-                });
-            })
-            .then((charge) => {
+            return stripre.charges.create({
+                amount: user.total,    // Charing Rs 25 
+                description: 'Web Development Product',
+                currency: 'INR',
+                customer: customer.id
+            });
+        }).then((charge) => {
                 if (charge) {
 
 
@@ -179,6 +178,7 @@ router.get("/addtocart", (req, res) => {
 
                     let flag = true;
                     let total_amount = user.total + parseInt(req.query.price);
+                    console.log("thise is total amount of the page ", total_amount);
 
 
                     user.cart.forEach(element => {
@@ -195,7 +195,16 @@ router.get("/addtocart", (req, res) => {
 
 
                         mycustdb.findOneAndUpdate({ username: req.session.myuser }, {
-                            $push: { cart: { coursename: col.name, coursedetails: col.desc, rating: col.rating, price: col.price, img: col.img, video: col.video } },
+                            $push: {
+                                cart: {
+                                    coursename: col.name,
+                                    coursedetails: col.desc,
+                                    rating: col.rating,
+                                    price: col.price,
+                                    img: col.img,
+                                    video: col.video
+                                }
+                            },
                             total: total_amount
 
 

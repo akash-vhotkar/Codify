@@ -122,8 +122,10 @@ router.post('/login', (req, res) => {
         bcrypt.compare(req.body.password, user.password, (err, ok) => {
 
             if (ok == true) {
+                const username = req.body.username;
+                req.session.myuser = username;
 
-                res.render('home');
+                res.render('home',{username});
             }
             else if (ok == false) {
                 login_err.push({ err_msg: "user not exist please register " })
@@ -189,8 +191,10 @@ router.post("/register", (req, res) => {
                             .then(() => {
 
                                 // errors.push({ msg: "registeration succefully " })
+                                const username = data.username;
+                                req.session.myuser = username;
 
-                                res.render('home');
+                                res.render('home',{username});
                             })
                             .catch((err) => {
                                 console.log("data was not inserted    " + err);

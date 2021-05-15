@@ -36,7 +36,8 @@ const schema = new mongoose.Schema({
     ,
     total: {
         required: false,
-        type: Number
+        type: Number,
+        default:0
 
     },
     mycourses: [{
